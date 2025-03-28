@@ -18,7 +18,7 @@ def chat_page():
             rx.box(
                 rx.foreach(
                     ChatState.messages,
-                    lambda msg: rx.text(
+                    lambda msg: rx.markdown(
                         msg.message,
                         color=rx.cond(msg.is_bot, "blue", "white"),  # Use rx.cond instead of if-else
                         align=rx.cond(msg.is_bot, "left", "right"),
